@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--Configuración básica del documento HTML-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBeauty - Cosmética Natural</title>
+
+  <!--Enlaces a Bootstrap y a los íconos de Bootstrap-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!--Estilos personalizados-->
+  <style>
+    /* Configuración general de fuente y comportamiento de desplazamiento */
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+
+    /* Estilos de la barra de navegación */
+    .navbar { background-color: #3c5a40; }
+    .navbar-brand, .nav-link { color: #fff !important; }
+
+    /* Encabezado principal con imagen de fondo */
+    header {
+      position: relative;
+      background: url('imagen2.jpeg') center center / cover no-repeat;
+      height: 100vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Capa oscura sobre la imagen para mejorar contraste del texto */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    /* Contenido centrado dentro del header */
+    header .content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 20px;
+    }
+
+    /* Sombra en los textos del encabezado */
+    header h1, header p { text-shadow: 0 2px 6px rgba(0,0,0,0.7); }
+
+    /* Botón verde personalizado */
+    .btn-eco {
+      background-color: #88b04b;
+      border: none;
+      padding: 12px 28px;
+      transition: 0.3s;
+    }
+    .btn-eco:hover { background-color: #739e3d; transform: scale(1.05); }
+
+    /* Espaciado general entre secciones */
+    section { padding: 80px 0; position: relative; z-index: 2; }
+
+    /* Pie de página */
+    footer { background-color: #3c5a40; color: #fff; }
+
+    /* Miniaturas de imágenes en la gestión de productos */
+    .thumb { height: 70px; object-fit: cover; border-radius: .35rem; }
+    .thumbs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 768px) {
+      header { height: 80vh; }
+      header h1 { font-size: 1.9rem; }
+    }
+  </style>
+
+  <!--Configuración de la PWA (Progressive Web App)-->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#a8d5ba">
+</head>
+<body class="bg-light">
+
+  <!--NAVBAR - Menú de navegación-->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">EcoBeauty</a>
+
+      <!--Botón para menú colapsable en móviles-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!--Enlaces del menú-->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gestion">Gestión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--SECCIÓN INICIO (Encabezado)-->
+  <header id="inicio">
+    <div class="content">
+      <h1 class="display-4 fw-bold">Belleza natural, ética y consciente</h1>
+      <p class="lead mb-4">Cosmética libre de crueldad animal y amigable con el medio ambiente</p>
+      <a href="#productos" class="btn btn-eco btn-lg text-white">Explorar productos</a>
+    </div>
+  </header>
+
+  <!--SECCIÓN PRODUCTOS-->
+  <section id="productos">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold text-success">Nuestros Productos</h2>
+
+      <!--Productos estáticos con enlace a su propia página-->
+      <div class="row" id="productosEstaticos">
+
+        <!--Producto 1-->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="crema.png" class="card-img-top" alt="Crema facial">
+            <div class="card-body text-center">
+              <h5 class="card-title">Crema Facial Hidratante</h5>
+              <p class="card-text">Con extractos de aloe vera y té verde para una piel radiante.</p>
+              <a href="crema.html" class="btn btn-eco text-white">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <!--Producto 2-->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="serum.png" class="card-img-top" alt="Facial Serum">
+            <div class="card-body text-center">
+              <h5 class="card-title">Facial Serum</h5>
+              <p class="card-text">Formulado con extractos naturales para nutrir, hidratar y revitalizar tu piel.</p>
+              <a href="serum.html" class="btn btn-eco text-white">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <!--Producto 3-->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="skincare.jpeg" class="card-img-top" alt="Natural Skincare">
+            <div class="card-body text-center">
+              <h5 class="card-title">Natural Skincare</h5>
+              <p class="card-text">Cuidado facial hecho con ingredientes 100% orgánicos y libres de químicos agresivos.</p>
+              <a href="skincare.html" class="btn btn-eco text-white">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--SECCIÓN DE GESTIÓN DE PRODUCTOS-->
+  <section id="gestion" class="bg-light">
+    <div class="container py-5">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-success">Gestión de Productos</h2>
+
+        <!--Botones para abrir modal o limpiar almacenamiento-->
+        <button type="button" class="btn btn-eco text-white btn-lg" data-bs-toggle="modal" data-bs-target="#productoModal">
+          Registrar Nuevo Producto
+        </button>
+        <button id="clearAll" class="btn btn-outline-danger btn-lg ms-2">
+          Limpiar todo (LocalStorage)
+        </button>
+      </div>
+
+      <!--Contenedor donde se mostrarán los productos registrados dinámicamente-->
+      <div id="productsContainer" class="row mt-4"></div>
+    </div>
+  </section>
+
+  <!--MODAL PARA REGISTRAR NUEVO PRODUCTO-->
+  <div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+
+        <!--Encabezado del modal-->
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="productoModalLabel">Registro de Nuevo Producto</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <!--Cuerpo del modal con formulario-->
+        <div class="modal-body p-4">
+          <form id="productoForm">
+            <div class="row g-3">
+
+              <!--Campos del formulario-->
+              <div class="col-md-4">
+                <label class="form-label">Clave *</label>
+                <input type="text" class="form-control" id="clave" required>
+              </div>
+              <div class="col-md-8">
+                <label class="form-label">Nombre del Producto *</label>
+                <input type="text" class="form-control" id="nombreProducto" required>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Precio *</label>
+                <input type="number" class="form-control" id="precio" step="0.01" required>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Stock *</label>
+                <input type="number" class="form-control" id="stock" required>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="3"></textarea>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">Imágenes del Producto</label>
+                <input type="file" id="imagenes" class="form-control" accept="image/*" multiple>
+              </div>
+            </div>
+
+            <!--Botones del modal-->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-eco text-white">Guardar Producto</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--SECCIÓN NOSOTROS-->
+  <section id="nosotros">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold text-success">Sobre Nosotros</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4">
+          <img src="fondo1.jpeg" class="img-fluid rounded-3 shadow" alt="Equipo EcoBeauty">
+        </div>
+        <div class="col-md-6">
+          <p>
+            En <strong>EcoBeauty</strong> creemos que la verdadera belleza nace del respeto por la naturaleza. 
+            Nuestros productos están formulados con ingredientes naturales, sin parabenos ni químicos dañinos, 
+            y elaborados bajo principios éticos de sostenibilidad y comercio justo.
+          </p>
+          <p>
+          Trabajamos cada día para ofrecer cosmética responsable, consciente y accesible para todos. 
+          Porque cuidar de ti también significa cuidar del planeta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--SECCIÓN CONTACTO-->
+  <section id="contacto" class="bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold text-success">Contáctanos</h2>
+
+      <!-- Formulario de contacto -->
+      <form class="mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" placeholder="Tu nombre">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" placeholder="Tu correo electrónico">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mensaje</label>
+          <textarea class="form-control" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-eco text-white w-100">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!--FOOTER - Pie de página-->
+  <footer class="text-center py-4">
+    <p class="mb-0">&copy; 2025 EcoBeauty - Cosmética Natural y Sustentable</p>
+  </footer>
+
+  <!--JAVASCRIPT (lógica del sitio)-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    // Array donde se guardan los productos
+    let productos = [];
+    const LS_KEY = 'productos';     // Clave para el LocalStorage
+    const modal = new bootstrap.Modal(document.getElementById('productoModal'));
+
+    // Guarda los productos en LocalStorage
+    function saveToLS() { localStorage.setItem(LS_KEY, JSON.stringify(productos)); }
+
+    // Carga los productos guardados en LocalStorage
+    function loadFromLS() {
+      const raw = localStorage.getItem(LS_KEY);
+      productos = raw ? JSON.parse(raw) : [];
+    }
+
+     // Convierte imágenes seleccionadas en base64 (para almacenarlas)
+    function readFilesAsDataURLs(fileList) {
+      return Promise.all(Array.from(fileList || []).map(file =>
+        new Promise((resolve, reject) => {
+          const fr = new FileReader();
+          fr.onload = () => resolve({ name: file.name, type: file.type, dataURL: fr.result });
+          fr.onerror = reject;
+          fr.readAsDataURL(file);
+        })
+      ));
+    }
+
+    // Renderiza los productos guardados en tarjetas dentro del contenedor
+    function renderProducts() {
+      const container = document.getElementById('productsContainer');
+      container.innerHTML = '';
+      productos.forEach((p, i) => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-4';
+
+        // Muestra hasta 3 imágenes en miniatura
+        const thumbs = (p.imagenes || []).slice(0,3).map(img => `<img src="${img.dataURL}" class="thumb w-100" alt="${p.nombreProducto}"/>`).join('');
+        
+        // Estructura de cada tarjeta
+        col.innerHTML = `
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+              <h5 class="mb-0">${p.nombreProducto}</h5>
+              <button class="btn btn-sm btn-light" data-index="${i}" data-action="delete"><i class="bi bi-trash3"></i></button>
+            </div>
+            <div class="card-body">
+              <p><strong>Clave:</strong> ${p.clave}<br>
+              <strong>Precio:</strong> $${p.precio.toFixed(2)}<br>
+              <strong>Stock:</strong> ${p.stock}</p>
+              <p>${p.descripcion || ''}</p>
+              ${thumbs ? `<div class="thumbs-grid">${thumbs}</div>` : '<em>Sin imágenes</em>'}
+            </div>
+          </div>`;
+        container.appendChild(col);
+      });
+
+      // Botón para eliminar producto individual
+      container.querySelectorAll('[data-action="delete"]').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const i = +e.currentTarget.dataset.index;
+          productos.splice(i,1);
+          saveToLS();
+          renderProducts();
+        });
+      });
+    }
+
+    // Evento al enviar el formulario del modal
+    document.getElementById('productoForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const imagenes = await readFilesAsDataURLs(document.getElementById('imagenes').files);
+
+      // Crea un nuevo objeto producto
+      const nuevo = {
+        id: crypto.randomUUID(),
+        clave: document.getElementById('clave').value.trim(),
+        nombreProducto: document.getElementById('nombreProducto').value.trim(),
+        precio: parseFloat(document.getElementById('precio').value),
+        stock: parseInt(document.getElementById('stock').value),
+        descripcion: document.getElementById('descripcion').value.trim(),
+        imagenes
+      };
+
+      // Guarda el nuevo producto
+      productos.push(nuevo);
+      saveToLS();
+      renderProducts();
+      e.target.reset();
+      modal.hide();
+    });
+
+    // Botón para limpiar todos los productos del LocalStorage
+    document.getElementById('clearAll').addEventListener('click', () => {
+      if (confirm('¿Seguro que deseas borrar todos los productos guardados?')) {
+        productos = [];
+        saveToLS();
+        renderProducts();
+      }
+    });
+
+    // Carga inicial de productos al abrir la página
+    document.addEventListener('DOMContentLoaded', () => {
+      loadFromLS();
+      renderProducts();
+    });
+  </script>
+</body>
+</html>
